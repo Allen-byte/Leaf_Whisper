@@ -1,20 +1,21 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import 'react-native-gesture-handler';
+
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+
+import React, { useEffect, useState } from 'react';
+import { View, Text } from 'react-native';
+import { AppNavigator } from './src/navigation/AppNavigator';
+import { initStorage } from './src/services/storage'; // 改为使用storage.js
+import { ToastProvider } from './src/contexts/ToastContext';
+import { UserProvider } from './src/contexts/UserContext';
+
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <UserProvider>
+      <ToastProvider>
+        <AppNavigator />
+      </ToastProvider>
+    </UserProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

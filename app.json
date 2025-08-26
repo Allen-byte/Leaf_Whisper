@@ -1,29 +1,50 @@
 {
   "expo": {
-    "name": "treehole",
-    "slug": "treehole",
+    "name": "LeafWhisper",
+    "slug": "LeafWhisper",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/splash-icon.png",
-      "resizeMode": "contain",
+      "image": "./assets/splash.png",
+      "resizeMode": "cover",
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "我们需要相机权限来拍摄图片"
+      }
     },
     "android": {
+      "splash": {
+        "mdpi": "./assets/splash.png",
+        "hdpi": "./assets/splash.png",
+        "xhdpi": "./assets/splash.png"
+      },
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "permissions": [
+        "CAMERA"
+      ],
+      "package": "com.allenbyte.LeafWhisper"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "assetBundlePatterns": [
+      "assets/images/*"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "c50749af-589e-40c2-bf29-fa209ccb97b0"
+      }
+    },
+    "owner": "allenbyte"
   }
 }
