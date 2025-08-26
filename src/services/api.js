@@ -1,4 +1,4 @@
-const SERVER_IP = "47.101.176.211";
+const SERVER_IP = "x.x.x.x";
 
 const API_BASE_URL = __DEV__
   ? `http://${SERVER_IP}:3000/api`
