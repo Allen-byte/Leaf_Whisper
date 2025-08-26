@@ -1,6 +1,6 @@
 import OpenAI from "openai";
 
-const API_KEY = 'sk-6ac2e65524124bcf8b34cc45089fada4';
+const API_KEY = '';
 
 const openai = new OpenAI(
     {
@@ -15,12 +15,12 @@ const prompt = `
 直接给出标签，以JSON形式返回
 `;
 
-const content = "今天是真热";
+const content = "";
 
 async function main() {
     const completion = await openai.chat.completions.create({
         // 模型列表：https://help.aliyun.com/zh/model-studio/getting-started/models
-        model: "qwen-plus",  // qwen-plus 属于 qwen3 模型，如需开启思考模式，请参见：https://help.aliyun.com/zh/model-studio/deep-thinking
+        model: "qwen-plus",
         messages: [
             { role: "system", content: prompt },
             { role: "user", content: content }
